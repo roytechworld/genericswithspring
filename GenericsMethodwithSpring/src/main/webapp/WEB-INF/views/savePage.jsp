@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
-<table>
+<table width="100%" border="1">
 <tr>
 
 <td>
@@ -33,7 +33,16 @@ Address
 ${loop.index+1}
 </td>
 <td>
-${stdentlistValue.name }
+          
+ <c:url var="studentinfo" value="/studentinfo" >
+ 
+ <c:param name="stid" value="${stdentlistValue.stid}"/>
+ <c:param name="stname" value="${stdentlistValue.name}"/>
+ 
+ </c:url>
+ 
+ <a href='<c:out value="${studentinfo}"></c:out>'>${stdentlistValue.name }</a>
+                      
 </td>
 
 <td>

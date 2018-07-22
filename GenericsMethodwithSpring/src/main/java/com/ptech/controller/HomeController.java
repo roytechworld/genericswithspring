@@ -48,7 +48,10 @@ public class HomeController<T> {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
-		
+		List<StudentMaster> studentlist=loadservice.getStudentDetails();
+		    
+	    model.addAttribute("stlist", studentlist);
+			
 		return "home";
 	}
 	
@@ -77,6 +80,18 @@ public class HomeController<T> {
 	
 	return "savePage";
 		
+	}
+	
+	
+	@RequestMapping(value="/studentinfo",params={"stid","stname"})
+	public String retriveinfo(Model model,@RequestParam("stid") String stid,@RequestParam("stname") String stname)
+	{
+		
+		System.out.println("stid and stname found "+stid+"  "+stname);
+	model.addAttribute("stid", stid)	;
+	model.addAttribute("stname",stname);
+		
+	return "studentinfo";
 	}
 	
 

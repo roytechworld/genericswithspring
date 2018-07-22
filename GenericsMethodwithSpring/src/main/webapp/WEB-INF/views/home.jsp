@@ -27,8 +27,23 @@
 			})
 			
 	    });
+		
+		
+	
+		
+		
+		
 
 	});
+	
+	
+	function callme(stid,stname,id)
+	{
+		
+		alert("Student name "+stname +" Student id "+stid);
+		
+		
+	}
 	</script>
 	
 </head>
@@ -99,6 +114,8 @@ ${loop.index+1}
  </c:url>
  
  <a href='<c:out value="${studentinfo}"></c:out>'>${stdentlistValue.name }</a>
+ 
+ <a href="#" id="h${loop.index+1}" onclick="callme('${stdentlistValue.stid}','${stdentlistValue.name}','${loop.index+1}')">click me</a>
                       
 </td>
 
